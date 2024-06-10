@@ -1,28 +1,24 @@
+// router allows to handle routes 
 import {Router} from "express"; 
-import { getTasks, createTasks, updateTasks, deleteTasks } from "../controllers/taskController";
+import * as taskController from "../controllers/taskController"; 
+import { authMiddleware } from "../middlewares/authMiddleware";
 
+//a router file is used to define and manage different routes (endpoints) that your application can respond to.
+const router: Router = Router(); 
 
-const router = Router(); 
+//defines POST route at tasks, then goes through middleware and lastly makes a call creatTask()
+router.post('/tasks', authMiddleware, taskController.createTask); 
 
-router.get('/', async (req, res) => {
-    const tasks = await getTasks(); 
-    res.json(tasks)
-}); 
+//defines GET route at tasks, then goes through middleware and lastly makes a call getTask()
+router.get('/tasks', authMiddleware, taskController.getTask); 
 
-router.post('/', async (req, res) => {
-    const tasks = await createTasks(req.body); 
-    res.json(tasks)
-}); 
+//defines GET route at tasks, then goes through middleware and lastly makes a call getTaskById()
+router.get('/tasks/:id', authMiddleware, taskController.getTaskById); 
 
-router.put('/:id', async (req, res) => {
-    const tasks = await updateTasks(parseInt(req.params.id, 10), req.body); 
-    res.json(tasks); 
-}); 
+//defines PUT route at tasks, then goes through middleware and lastly makes a call updateTask()
+router.put('/tasks/:id', authMiddleware, taskController.updateTask); 
 
-
-router.delete('/:id', async (req, res) => {
-    const tasks = await deleteTasks(parseInt(req.params.id));
-    res.json(tasks);
-}); 
+//defines DELETE route at tasks, then goes through middleware and lastly makes a call deleteTask()
+router.delete('/tasks/:id', authMiddleware, taskController.deleteTask); 
 
 export default router; 

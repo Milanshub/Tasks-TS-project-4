@@ -1,6 +1,6 @@
 import { MongoClient } from "mongodb";  
 import dotenv from 'dotenv'; 
-
+import { log } from "../utils/logger";
 
 //connect dotenv 
 dotenv.config(); 
@@ -14,11 +14,11 @@ export const connectToMongoDB = async () => {
     const client = new MongoClient(uri);
     try {
         await client.connect(); 
-        console.log("Connected to MongoDB Atlas"); 
+        log("Connected to MongoDB Atlas"); 
 
         return client; 
     } catch (error) {
-        console.error('Error connecting to MongoDB Atlas:', error);
+        log(`Error connecting to MongoDB Atlas: ${error}`);
         throw error;
     }
 
