@@ -27,5 +27,5 @@ export const updateTask = async(id:string, taskData:Partial<ITask>): Promise <IT
 
 // function that finds by id and deletes task
 export const deleteTask = async(id: string): Promise <ITask | null> =>{
-    return await Task.findByIdAndDelete().exec(); 
+    return await Task.findByIdAndDelete(id).exec(); 
 }

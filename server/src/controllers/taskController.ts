@@ -14,8 +14,11 @@ export const createTask: ExpressRequestHandle = async (req, res) => {
         // 201 status 'created'
         res.status(201).json(task);
     } catch (error:any){
-        // 400 status 'bad request' 
-        res.status(400).json({error: error.message});
+        if (error.name === 'ValidationError') {
+            res.status(400).json({ error: error.message });
+        } else {
+            res.status(500).json({ error: 'Server Error' });
+        }
     }
 }; 
 

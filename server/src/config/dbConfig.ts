@@ -6,7 +6,7 @@ import { log } from "../utils/logger";
 dotenv.config(); 
 
 // connect to mongo uri link 
-const uri = process.env.MONGODP_URI!; 
+const uri = process.env.MONGODB_URI!; 
 
 
 // Asynchronous arrow function to connect to MongoDB and use that function elsewhere in the app 
