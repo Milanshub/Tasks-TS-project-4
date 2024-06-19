@@ -5,7 +5,6 @@ import { ITask } from '../../../server/src/models/tasks';
 import AddTask from '../components/AddTask';
 import TaskList from '../components/TaskList';
 import '../App.css'; 
-import TaskItem from '../components/TaskItem';
 
 const Dashboard: React.FC = () => {
     //hold the list of tasks fetched from the backend.
@@ -36,6 +35,14 @@ const Dashboard: React.FC = () => {
         fetchData();
     };
 
+    const handleTaskUpdated = () => {
+        fetchData();
+    }; 
+
+    const handleTaskDeleted = () => {
+        fetchData();
+    };
+
     if (loading) {
         return <div>Loading...</div>;
     }
@@ -48,7 +55,7 @@ const Dashboard: React.FC = () => {
         <div className="dashboard-container">
             <h1>Dashboard</h1>
             <AddTask onTaskAdded={handleTaskAdded} />
-            <TaskList tasks={tasks} />
+            <TaskList tasks={tasks} onTaskUpdated={handleTaskUpdated} onTaskDeleted={handleTaskDeleted}/>
         </div>
     );
 };
