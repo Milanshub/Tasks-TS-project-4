@@ -53,7 +53,7 @@ const Dashboard: React.FC = () => {
 
     return (
         <div className="dashboard-container">
-            <h1>Dashboard</h1>
+            <h1 className="dashboard-header">Keeper</h1>
             <AddTask onTaskAdded={handleTaskAdded} />
             <TaskList tasks={tasks} onTaskUpdated={handleTaskUpdated} onTaskDeleted={handleTaskDeleted}/>
         </div>
