@@ -14,7 +14,7 @@ const Dashboard: React.FC = () => {
     //hold any error messages if fetching data fails
     const [error, setError] = React.useState<string | null>(null);
 
-    
+    //Fetches the tasks from the backend.
     const fetchData = async (): Promise<void> => {
         try {
             const response = await axios.get<ITask[]>('http://localhost:5000/api/tasks');
@@ -27,10 +27,12 @@ const Dashboard: React.FC = () => {
         }
     };
 
+    //useEffect Hook: Runs the fetchData function
     React.useEffect(() => {
         fetchData();
     }, []);
 
+   // Functions that call fetchData to refresh the tasks
     const handleTaskAdded = () => {
         fetchData();
     };
@@ -43,10 +45,12 @@ const Dashboard: React.FC = () => {
         fetchData();
     };
 
+    //If loading is true, it renders a "Loading..." message.
     if (loading) {
         return <div>Loading...</div>;
     }
 
+    // if error renders error
     if (error) {
         return <div>{error}</div>;
     }

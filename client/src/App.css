@@ -1,7 +1,7 @@
-/* General styles */
+
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4; /* Light grey background */
+  background-color: #f4f4f4; 
   margin: 0;
   padding: 0;
 }
@@ -14,7 +14,7 @@ p {
   color: #555;
 }
 
-/* Dashboard styles */
+
 .dashboard-container {
   padding: 20px;
   max-width: 800px;
@@ -26,15 +26,14 @@ p {
   margin-bottom: 20px;
 }
 
-/* AddTask styles */
 .add-task-form {
   background-color: #f9f9f9;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  width: 50%; /* Reduced width */
-  margin: 0 auto 20px auto; /* Centered form */
+  width: 50%; 
+  margin: 0 auto 20px auto;
 }
 
 .add-task-form div {
@@ -55,7 +54,7 @@ p {
 }
 
 .add-task-form button {
-  background-color: #007bff; /* Blue button */
+  background-color: #007bff; 
   color: white;
   border: none;
   border-radius: 4px;
@@ -64,7 +63,7 @@ p {
 }
 
 .add-task-form button:hover {
-  background-color: #0056b3; /* Darker blue */
+  background-color: #0056b3;
 }
 
 .error-message {
@@ -72,7 +71,7 @@ p {
   margin-bottom: 10px;
 }
 
-/* TaskItem styles */
+
 .task-item {
   background-color: #fff;
   padding: 15px;
@@ -80,7 +79,7 @@ p {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
-  flex: 1 1 calc(33% - 20px); /* Three items per row with gap */
+  flex: 1 1 calc(33% - 20px); 
   box-sizing: border-box;
 }
 
@@ -119,15 +118,14 @@ p {
   background-color: #e53935;
 }
 
-/* TaskList styles */
+
 .task-list {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  margin-top: 20px; /* Ensure tasks are below header */
+  margin-top: 20px; 
 }
 
-/* NotFoundPage styles */
 .not-found-page {
   text-align: center;
   padding: 50px;
@@ -135,8 +133,8 @@ p {
 }
 
 .btn {
-  background-color: #007bff; /* Fallback color */
-  background-image: linear-gradient(to bottom, #007bff, #0056b3); /* Gradient background */
+  background-color: #007bff; 
+  background-image: linear-gradient(to bottom, #007bff, #0056b3); 
   color: #fff;
   border: none;
   padding: 8px 16px;
@@ -146,12 +144,12 @@ p {
 }
 
 .btn:hover {
-  background-color: #0056b3; /* Darker shade on hover */
+  background-color: #0056b3; 
 }
 
 .blue-gradient {
-  background-color: #007bff; /* Fallback color */
-  background-image: linear-gradient(to bottom, #007bff, #0056b3); /* Gradient background */
+  background-color: #007bff; 
+  background-image: linear-gradient(to bottom, #007bff, #0056b3); 
   color: #fff;
   border: none;
   padding: 8px 16px;
@@ -161,10 +159,10 @@ p {
 }
 
 .blue-gradient:hover {
-  background-color: #0056b3; /* Darker shade on hover */
+  background-color: #0056b3;
 }
 
-/* TaskList component styles */
+
 .task-list {
   margin-top: 20px;
 }

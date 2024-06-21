@@ -3,12 +3,14 @@ import { ITask } from '../../../server/src/models/tasks';
 import TaskItem from './TaskItem'; // Assuming TaskItem is in the same directory
 import '../App.css';
 
+// model for TaskList 
 interface TaskListProps {
     tasks: ITask[];
     onTaskUpdated: () => void; 
     onTaskDeleted: () => void;
 }
 
+// functional component for returns list of createdm updated and deleted Tasks
 const TaskList: React.FC<TaskListProps> = ({ tasks, onTaskUpdated, onTaskDeleted }) => {
     return (
         <div className="task-list">
