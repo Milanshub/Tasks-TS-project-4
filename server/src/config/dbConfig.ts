@@ -5,7 +5,7 @@ import { log } from "../utils/logger";
 //connect dotenv 
 dotenv.config(); 
 
-// connect to mongo uri link 
+// connect to mongo uri link /kf
 const uri = process.env.MONGODB_URI!; 
 
 
